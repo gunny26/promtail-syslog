@@ -51,6 +51,7 @@ jobs:
           context: . # Pfad zum Dockerfile (hier: Root)
           platforms: linux/amd64,linux/arm64 # Erstellt beide Architekturen
           push: true
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha # Nutzt GitHub Actions Cache für schnellere Builds
           cache-to: type=gha,mode=max
