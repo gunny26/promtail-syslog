@@ -43,6 +43,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: latest
 
       - name: 6. Build and Push Multi-Arch Docker Image
         uses: docker/build-push-action@v6
